@@ -11,12 +11,12 @@ public class Main {
     static boolean onMenu = true;
     static Scanner menuChoice = new Scanner(System.in);
     static Scanner scanner2 = new Scanner(System.in);
-    static Menu myMenu = new Menu();
-    static Search search = new Search();
+    static MenuGenerator myMenu = new MenuGenerator();
+    static MakeSearchRequestByName search = new MakeSearchRequestByName();
+    static MakeDetailRequestByID details = new MakeDetailRequestByID();
 
 
     public static void main(String[] args) {
-
 
         while (onMenu) {
             myMenu.displayMenu();
@@ -24,7 +24,7 @@ public class Main {
 
             switch (optionMenu) {
                 case "1" -> search.searchByName();
-                case "2" -> Details.detailsById();
+                case "2" -> details.detailsById();
                 case "3" -> myMenu.exitMenu();
             }
         }
