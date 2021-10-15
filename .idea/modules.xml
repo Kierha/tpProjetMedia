@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Tp-media/mediaProject.iml" filepath="$PROJECT_DIR$/Tp-media/mediaProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/tpProjetMedia.iml" filepath="$PROJECT_DIR$/.idea/tpProjetMedia.iml" />
+    </modules>
+  </component>
+</project>

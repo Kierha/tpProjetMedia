@@ -7,7 +7,7 @@ public class GetMultiDataArray {
     private MultiMedia[] results;
 
 
-    public GetMultiDataArray (int page, MultiMedia[] results) {
+    public GetMultiDataArray(int page, MultiMedia[] results) {
         this.page = page;
         this.results = results;
     }

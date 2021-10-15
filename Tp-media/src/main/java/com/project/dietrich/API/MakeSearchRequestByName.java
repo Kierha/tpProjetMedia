@@ -15,13 +15,13 @@ public class MakeSearchRequestByName {
     ArrayList<MultiMedia> finalList = new ArrayList<MultiMedia>();
     GetMultiDataArray values;
 
-    public void searchByNameWithArgs(String nameInputResearch) {
+    public ArrayList<MultiMedia> searchByNameWithArgs(String nameInputResearch) {
         apiRequest(nameInputResearch);
         finalTableGenerator(values);
-        printMedias.printMedias(finalList);
+        return finalList;
     }
 
-    public void apiRequest(String nameInputResearch){
+    private void apiRequest(String nameInputResearch) {
         System.out.println("\nLoading " + nameInputResearch + "......\n");
         String urlSearch = "https://api.themoviedb.org/3/search/multi?api_key=cc684f060406396e3845afc82fe9a689&query=";
         if (nameInputResearch != null) {
@@ -32,6 +32,7 @@ public class MakeSearchRequestByName {
                         .asJson();
             } catch (UnirestException e) {
                 e.printStackTrace();
+                System.out.println("ERROR, Request unreachable !");
             }
             Gson jsonWithSearch = new GsonBuilder().setPrettyPrinting().create();
             values = jsonWithSearch.fromJson(String.valueOf(reponseSearch.getBody()), GetMultiDataArray.class);

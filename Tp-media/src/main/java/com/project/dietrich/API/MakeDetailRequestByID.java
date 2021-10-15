@@ -28,7 +28,8 @@ public class MakeDetailRequestByID {
         return medias;
         //printMedias.printResults(oneMovie, oneSerie);
     }
-    public void apiRequests(int idInputResearch){
+
+    private void apiRequests(int idInputResearch) {
 
         System.out.println("\nLoading ID n° " + idInputResearch + " ...");
 
@@ -47,7 +48,6 @@ public class MakeDetailRequestByID {
 
         // SERIE
 
-
         String serieSearch = "https://api.themoviedb.org/3/tv/" + idInputResearch + "?api_key=c0caae23e72eec445479c7a837fff962";
         HttpResponse<JsonNode> serieResponse = null;
         try {
@@ -61,7 +61,7 @@ public class MakeDetailRequestByID {
         serieResult = jsonWithIdSearchSerie.fromJson(String.valueOf(serieResponse.getBody()), SerieMediaDto.class);
     }
 
-    public void mediaObjectGenerator(MovieDto movieResult, SerieMediaDto serieResult){
+    private void mediaObjectGenerator(MovieDto movieResult, SerieMediaDto serieResult) {
         //Movie Object
         oneMovie.setId(movieResult.getId());
         oneMovie.setName(movieResult.getOriginal_title());
@@ -78,7 +78,4 @@ public class MakeDetailRequestByID {
         oneSerie.setVote_average(serieResult.getVote_average());
         oneSerie.setVote_count(serieResult.getVote_count());
     }
-
-
-
 }

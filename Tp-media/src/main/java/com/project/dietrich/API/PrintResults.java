@@ -48,7 +48,7 @@ public class PrintResults {
                     System.out.println(Color.getGreen() + "Average " + oneMedia.getVote_average());
                     System.out.println(Color.getGreen() + "Vote : " + oneMedia.getVote_count());
                 }
-            }  else {
+            } else {
                 System.out.println("Whooops, no correspondance found... Try another ID ");
             }
 
